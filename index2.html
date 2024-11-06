@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form_wrapper {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            color: #07bb9d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para el formulario */
+        .form_group {
+            margin-bottom: 15px;
+        }
+
+        .form_group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #07bb9d;
+            font-weight: bold;
+        }
+
+        .form_group input,
+        .form_group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form_group textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .contact_btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #07bb9d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .contact_btn:hover {
+            background-color: #06856f;
+        }
+
+        .confirmation_message {
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+
+        /* Centrar el botón "Regresar" */
+        .btn_container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .btn_container button {
+            padding: 10px 20px;
+            background-color: #ccc;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            width: auto;
+        }
+
+        .btn_container button:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form_wrapper">
+        <h2>Contacto</h2>
+        <form id="contactForm">
+            <div class="form_group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form_group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form_group">
+                <label for="phone">Número de teléfono</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form_group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="contact_btn">Enviar</button>
+        </form>
+
+        <div class="confirmation_message" id="confirmationMessage">
+            ¡Tu mensaje ha sido enviado exitosamente!
+        </div>
+
+        <div class="btn_container">
+            <button onclick="window.location.href='index.html'">Regresar a la Hoja de Vida</button>
+        </div>
+    </div>
+
+    <script>
+        // Función para manejar el envío del formulario
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevenir el comportamiento por defecto del formulario (que recargue la página)
+
+            // Mostrar el mensaje de confirmación
+            document.getElementById('confirmationMessage').style.display = 'block';
+
+            // Ocultar el formulario
+            document.getElementById('contactForm').style.display = 'none';
+        });
+    </script>
+
+</body>
+
+</html>
+
