@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Contacto</title>
     <style>
-        /* Estilos generales */
+        
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -33,7 +33,6 @@
             margin-bottom: 20px;
         }
 
-        /* Estilos para el formulario */
         .form_group {
             margin-bottom: 15px;
         }
@@ -86,7 +85,6 @@
             display: none;
         }
 
-        /* Centrar el botón "Regresar" */
         .btn_container {
             display: flex;
             justify-content: center;
@@ -144,14 +142,12 @@
     </div>
 
     <script>
-        // Función para manejar el envío del formulario
+        
         document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevenir el comportamiento por defecto del formulario (que recargue la página)
+            event.preventDefault(); 
 
-            // Mostrar el mensaje de confirmación
             document.getElementById('confirmationMessage').style.display = 'block';
 
-            // Ocultar el formulario
             document.getElementById('contactForm').style.display = 'none';
         });
     </script>
@@ -159,4 +155,3 @@
 </body>
 
 </html>
-
